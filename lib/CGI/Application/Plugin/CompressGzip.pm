@@ -1,4 +1,6 @@
 package CGI::Application::Plugin::CompressGzip;
+our $VERSION = '1.02';
+
 
 use 5.006;
 use strict;
@@ -13,8 +15,6 @@ our @EXPORT = qw(
     cgiapp_get_query
 );
 
-our $VERSION = '1.00';
-
 sub cgiapp_get_query {
     return CGI::Compress::Gzip->new();
 }
@@ -26,6 +26,10 @@ __END__
 =head1 NAME
 
 CGI::Application::Plugin::CompressGzip - Add gzip compression to CGI::Application
+
+=head1 VERSION
+
+version 1.02
 
 =head1 SYNOPSIS
 
@@ -76,4 +80,3 @@ it under the same terms as Perl itself, either Perl version 5.8.2 or,
 at your option, any later version of Perl 5 you may have available.
 
 =cut
-

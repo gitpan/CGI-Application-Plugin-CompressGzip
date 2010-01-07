@@ -1,16 +1,19 @@
-use 5.006;
+
+use strict;
+use warnings;
+
 use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
+
 WriteMakefile(
-    NAME              => 'CGI::Application::Plugin::CompressGzip',
-    VERSION_FROM      => 'lib/CGI/Application/Plugin/CompressGzip.pm', # finds $VERSION
-    LICENSE           => 'perl',
-    PREREQ_PM         => {
-        CGI::Application => 3.21,
-        CGI::Compress::Gzip => 0.19,
-        },
-    ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
-      (ABSTRACT_FROM  => 'lib/CGI/Application/Plugin/CompressGzip.pm', # retrieve abstract from module
-       AUTHOR         => 'Rhesa Rozendaal <rhesa@cpan.org>') : ()),
+  DISTNAME  => 'CGI-Application-Plugin-CompressGzip',
+  NAME      => 'CGI::Application::Plugin::CompressGzip',
+  AUTHOR    => 'Rhesa\ Rozendaal\ \<rhesa\@cpan\.org\>',
+  ABSTRACT  => 'Add gzip compression to CGI::Application',
+  VERSION   => '1.02',
+  EXE_FILES => [ qw() ],
+  (eval { ExtUtils::MakeMaker->VERSION(6.21) } ? (LICENSE => 'perl') : ()),
+  PREREQ_PM    => {
+    "CGI::Application" => '4.01',
+    "CGI::Compress::Gzip" => '0.19',
+  },
 );
